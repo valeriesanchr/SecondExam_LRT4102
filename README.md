@@ -225,7 +225,9 @@ In this approach, the main turtle follows a predefined zigzag grid pattern, simi
 - A full 10x10 grid path is generated, sweeping the map horizontally.
 - The turtle does not deviate from the path — instead, it collects any target it encounters along the way.
 - All detected targets are timestamped for individual collection time reporting.
-  
+
+Example grid pattern (zigzag traversal):
+
 ```python
 for i, y in enumerate(y_vals):
     if i % 2 == 0:
