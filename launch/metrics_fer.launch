@@ -4,5 +4,5 @@
     <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node" output="screen"/>
 
     <!-- Lanzar el script teleop.py del paquete Practicas_lab -->
-    <node pkg="Practicas_lab" type="can_robot_collector.py" name="can_robot_collector_node" output="screen"/>
+    <node pkg="Practicas_lab" type="metrics_fer.py" name="can_robot_collector_node" output="screen"/>
 </launch>
