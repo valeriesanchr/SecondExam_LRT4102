@@ -100,3 +100,12 @@ For each target turtle:
 - Kills the turtle to simulate collection.
 - After all are collected, stores the times for that trial.
 
+| Trial | Total Time (s) |
+| ----- | -------------- |
+| 1     | 3.66           |
+| 2     | 11.73          |
+| 3     | 23.58          |
+| 4     | 3.98           |
+| 5     | 11.4           |
+
+
