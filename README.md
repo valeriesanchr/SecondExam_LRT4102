@@ -11,7 +11,43 @@ This repository contains four different Python scripts using ROS and Turtlesim t
 - Each script uses a different strategy for the order in which turtles are collected.
 - After multiple test runs, the scripts generate a PDF report summarizing the times.
 
----
+## Services Used in the Code
+
+The turtlesim simulation relies heavily on ROS services to interact with the turtles and manage their behavior during the execution of the search algorithms. The key services used in the code are described below:
+
+### 1. `/kill`
+This service is used to remove a turtle from the simulation. Once a turtle is collected (i.e., reached by turtle1), the `/kill` service is called with the name of the target turtle to remove it from the environment.
+
+- **Service Type**: `turtlesim/Kill`
+- **Usage**: `rospy.ServiceProxy('/kill', Kill)`
+- **Purpose**: Simulates the "collection" of a turtle.
+
+### 2. `/turtle1/teleport_absolute`
+This service allows the main turtle (turtle1) to instantly move to a specific coordinate on the map. This is typically used to initialize the turtle's position or to reset its location.
+
+- **Service Type**: `turtlesim/TeleportAbsolute`
+- **Usage**: `rospy.ServiceProxy('/turtle1/teleport_absolute', TeleportAbsolute)`
+- **Purpose**: Set turtle1's position to a known location without gradual movement.
+
+### 3. `/spawn`
+This service creates new turtles at specified coordinates with an optional orientation. It is used to simulate the appearance of turtles in random positions across the map.
+
+- **Service Type**: `turtlesim/Spawn`
+- **Usage**: `rospy.ServiceProxy('/spawn', Spawn)`
+- **Purpose**: Add new turtles to the environment for turtle1 to find.
+
+### 4. `/turtle1/cmd_vel`
+Although technically a **topic** and not a service, it is important to mention it. This topic is used to control the velocity (both linear and angular) of turtle1, enabling it to move around the simulation space.
+
+- **Message Type**: `geometry_msgs/Twist`
+- **Usage**: `turtle_vel_pub.publish(velocity_message)`
+- **Purpose**: Drive turtle1 around the simulation field.
+
+### Integration of Services
+These services are called within Python scripts using `rospy.ServiceProxy()` objects and are essential for simulating interaction, movement, and decision-making. By integrating these services, the simulation achieves a dynamic environment where turtles can be spawned, tracked, collected, and removed — mimicking a real-world autonomous search and collection task.
+
+Understanding how these services are coordinated is crucial to developing efficient and realistic search algorithms within the turtlesim environment.
+
 
 # 1. Collection in Spawn Order
 
