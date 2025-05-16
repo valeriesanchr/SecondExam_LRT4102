@@ -254,6 +254,9 @@ Since this method takes a lot of time to complete, we only did one trial run.
 **Disadvantages:**
 - Not adaptive: the turtle does not prioritize closer targets.
 - Inefficient if targets are far from the traversal path early on.
+- 
+
+Conclusion
 
 | Method                          | Strengths                    | Weaknesses                          |
 | --------------------------      | -----------------------------| -------------                       |
@@ -261,6 +264,14 @@ Since this method takes a lot of time to complete, we only did one trial run.
 | 2. Collection by nearest turtle | Simple to implement          | Highly inefficient and inconsistent |
 | 3. Spiral Pattern               | Systematic, fair performance | Can be suboptimal in early passes   |
 | 4. Fixed Grid Path              | Complete coverage guaranteed | Not adaptive, slow for nearby items |
+
+## Conclusion
+
+From the results of the four turtlesim search methods, it is clear that some approaches are significantly faster than others when it comes to collecting the turtles. For instance, methods that use directed or quadrant-based exploration tend to outperform those that rely on purely random movements or predefined paths, demonstrating greater efficiency in locating and collecting targets.
+
+However, deciding which method is the "right" one for real-world applications depends on multiple factors beyond just speed. The choice must consider the available budget, computational and hardware resources, and the specific requirements of the task at hand. For example, a high-budget project with ample computational power might benefit from complex search algorithms, while a resource-constrained system may require simpler, more cost-effective strategies.
+
+In summary, the optimal search strategy balances efficiency, complexity, and resource availability, tailoring the approach to the unique context of the application.
 
 
 
