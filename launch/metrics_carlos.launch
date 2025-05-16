@@ -1,1 +1,8 @@
+<launch>
+    
+    <!-- Lanzar el nodo turtlesim_node del paquete turtlesim -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node" output="screen"/>
 
+    <!-- Lanzar el script teleop.py del paquete Practicas_lab -->
+    <node pkg="Practicas_Lab" type="metrics_carlos.py" name="metrics_node" output="screen"/>
+</launch>
